@@ -12,8 +12,8 @@ security:
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: 
-            
+            security: false
+
         api:
             pattern: ^/api
             stateless: true
@@ -31,5 +31,5 @@ security:
         - { path: ^/api/contexts, roles: PUBLIC_ACCESS }
         - { path: ^/api$, roles: PUBLIC_ACCESS }
 
-        # 🔐 Qualquer outra rota `/api/**` precisa de autenticação
+        # 🔐 Protege todas as demais rotas
         - { path: ^/api, roles: ROLE_ADMIN }
